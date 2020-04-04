@@ -26,9 +26,10 @@ $('document').ready(function(){
 		$('#bulb_pink').addClass('bulb-glow-pink');
 		$('#bulb_orange').addClass('bulb-glow-orange');
 		$('body').addClass('peach');
-		$(this).fadeOut('slow').delay(1000).promise().done(function(){
+		$(this).fadeOut('slow').delay(100).promise().done(function(){
 			audio.play();
 			$('.bannar').addClass('bannar-come');
+			$('.bannar').animate({top:500},0);
 			$('.balloon-border').animate({top:-500},8000);
 			$('#b1,#b4,#b5,#b7').addClass('balloons-rotate-behaviour-one');
 			$('#b2,#b3,#b6,#b8').addClass('balloons-rotate-behaviour-two');
@@ -104,10 +105,15 @@ $('document').ready(function(){
 	}
 
 	$('#wish_message').click(function(){
-		 vw = $(window).width()/2;
+		vw = $(window).width()/2;
 
-		var video = $('.dance')[0];
-		video.autoplay = true;
+		var dance = document.createElement("img");
+		dance.src = "dance.gif";
+		dance.style.zIndex = "0";
+		document.getElementById("dance").appendChild(dance);
+
+		//var video = $('.dance')[0];
+		//video.autoplay = true;
 		$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8').stop();
 		$('#b1').attr('id','b11');
 		$('#b2').attr('id','b22')
@@ -127,7 +133,6 @@ $('document').ready(function(){
 		$('#b88').animate({top:240, left: vw+350},500);
 		$('.balloons').css('opacity','0.9');
 		$('.balloons h2').fadeIn(3000);
-		video.play();
 		$(this).fadeOut('slow').delay(1000).promise().done();
 	});
 });

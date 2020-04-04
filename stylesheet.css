@@ -987,13 +987,12 @@ audio {
 	-ms-animation: bannar_come linear 6s;
 	-ms-transform:translate(0px,0px);
 	animation: bannar_come linear 6s;
+	animation-iteration-count: infinite;
 	transform:translate(0px,0px);
 }
 @-webkit-keyframes bannar_come {
 	0%{
-		-webkit-transform:translate(0px,-1000px);
-	}
-	33%{
+		-webkit-transform:translate(0px,-100px);
 		-webkit-transform:translate(0px,0px);
 		-webkit-transform:rotate(10deg);
 		/*-webkit-transform:scale(1.5);*/
@@ -1003,29 +1002,30 @@ audio {
 		-webkit-transform:rotate(-10deg);
 	}
 	100% {
-		-webkit-transform:translate(0px,0px);
+		-webkit-transform:translate(-100px,0px);
 	}
 }
 @-moz-keyframes bannar_come {
 	0%{
-		-moz-transform:translate(0px,-1000px);
-	}
-	33%{
-		-moz-transform:translate(0px,0px);
+		-moz-transform:translate(0px,-100px);
 		-moz-transform:rotate(10deg);
 		/*-webkit-transform:scale(1.5);*/
 	}
-	66% {
+	33% {
 		-moz-transform:translate(0px,100px);
 		-moz-transform:rotate(-10deg);
 	}
-	100% {
+	66% {
 		-moz-transform:translate(0px,0px);
+	}
+	100% {
+		-moz-transform:translate(-100px, 0px);
+		-moz-transform:rotate(10deg);
 	}
 }
 @-o-keyframes bannar_come {
 	0%{
-		-o-transform:translate(0px,-1000px);
+		-o-transform:translate(0px,-100px);
 	}
 	33%{
 		-o-transform:translate(0px,0px);
@@ -1037,41 +1037,43 @@ audio {
 		-o-transform:rotate(-10deg);
 	}
 	100% {
-		-o-transform:translate(0px,0px);
+		-o-transform:translate(-100px,0px);
+		-o-transform:rotate(10deg);
 	}
 }
 @-ms-keyframes bannar_come {
 	0%{
-		-ms-transform:translate(0px,-1000px);
-	}
-	33%{
 		-ms-transform:translate(0px,0px);
 		-ms-transform:rotate(10deg);
 		/*-webkit-transform:scale(1.5);*/
 	}
-	66% {
+	33% {
 		-ms-transform:translate(0px,100px);
 		-ms-transform:rotate(-10deg);
 	}
-	100% {
+	66% {
 		-ms-transform:translate(0px,0px);
 	}
-}o
+	100% {
+		-ms-transform:rotate(10deg);
+	}
+}
 @keyframes bannar_come {
 	0%{
-		transform:translate(0px,-1000px);
-	}
-	33%{
-		transform:translate(0px,0px);
+		transform:translate(0px,-100px);
 		transform:rotate(10deg);
 		/*-webkit-transform:scale(1.5);*/
 	}
-	66% {
+	33% {
 		transform:translate(0px,100px);
 		transform:rotate(-10deg);
 	}
-	100% {
+	66% {
 		transform:translate(0px,0px);
+	}
+	100% {
+		transform:translate(0px,100px);
+		transform:rotate(10deg);
 	}
 }
 
